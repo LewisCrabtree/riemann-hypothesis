@@ -419,7 +419,7 @@ theorem gramFilt_gen {F E : Type} [Field F] [NumberField F] [Field E] [NumberFie
       have h := hc e0 he0L
       simp only [Set.mem_preimage, Set.mem_setOf_eq, hφs, hφe, mul_one] at h
       exact h w hw
-  exact filt_abstract π hπ0 hπ L hLo hLc hπL β hβc hβ1 hβ2 hβs G hG hGs x hxo hsmall
+  exact PI.VolStabS.filt_abstract π hπ0 hπ L hLo hLc hπL β hβc hβ1 hβ2 hβs G hG hGs x hxo hsmall
 
 theorem gramFilt_zero {F E : Type} [Field F] [NumberField F] [Field E] [NumberField E] [Algebra F E]
     (σ : E →ₐ[F] E) (hσ : ∀ x, σ (σ x) = x) (M : ℕ) (J : Matrix (Fin M) (Fin M) E)
