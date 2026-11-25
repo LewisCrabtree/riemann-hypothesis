@@ -1628,8 +1628,6 @@ theorem WeightPos.full : WeightPos.Statement h v := WeightPos.proof h v (VecAtNe
 theorem MajorantExists.full : MajorantExists.Statement h v :=
   MajorantExists.proof h v (GramAtData.full h v)
 
-theorem ArchLatticeDiscrete.full : ArchLatticeDiscrete.Statement h v := ArchLatticeDiscrete.proof h v
-
 alias LenCauchySchwarz.full := _root_.GroundTheory.Heights₂.Heights.FiniteCovolume.LenCauchySchwarz.proof
 
 theorem BoundedInverseCompact.full : BoundedInverseCompact.Statement h v :=
@@ -1723,7 +1721,7 @@ theorem ScalingLaw.full_of {W : Type*} [AddCommGroup W] [Module E W] [FiniteDime
   ScalingLaw.proof h v hU
     (VectorOrbitsFinite.proof h hP (IsotropicScaling.full h) (BoundedIndexSubgroupsFinite.full W)
       (LineIndexNeZero.full E W))
-    (UnfoldOrbit.full _) (DiscreteFundamentalDomain.full _) (ArchLatticeDiscrete.full h v)
+    (UnfoldOrbit.full _) (DiscreteFundamentalDomain.full _) (ArchLatticeDiscrete.proof h v)
 
 theorem UnfoldingIntegral.full_of {W : Type*} [AddCommGroup W] [Module E W] {ι : Type*}
     [Fintype ι] [DecidableEq ι] (h : HermitianForm F E W) (v : Basis ι E W)
@@ -1749,7 +1747,7 @@ theorem ArithmeticCovolumeFinite.step_of {W : Type u} [AddCommGroup W] [Module E
       (UnfoldingIntegral.full_of h v hUA hHP hSC))
     (MahlerCompactness.full_of h v hR hA hT) (ShortVectorIsotropic.full h v)
     (ShortestVectorIndex.full h v) (IntegralFamilyBound.full E) (MajorantExists.full h v)
-    (ArchLatticeDiscrete.full h v) hPB
+    (ArchLatticeDiscrete.proof h v) hPB
 
 theorem CovolumeFiniteBelow.of_steps (hR : ReducedBasisBound.Statement)
     (hA : ∀ (W : Type u) [AddCommGroup W] [Module E W] [FiniteDimensional E W]
